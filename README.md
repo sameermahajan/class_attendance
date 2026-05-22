@@ -6,4 +6,4 @@ Upload images to folder face_dataset with the name of the person as folder name 
 
 Check face as either unknown or one of the known ones
 
-[![Check Face YouTube Video](face_recognition.png)](https://youtu.be/oF4FQphZXeI)
+[![Check Face YouTube Video](face recognition.png)](https://youtu.be/oF4FQphZXeI)

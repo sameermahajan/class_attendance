@@ -170,6 +170,8 @@ while True:
                 # Convert distance into confidence
                 if identity == "Unknown":
                     label = "Unknown"
+                    # RED color for unknown
+                    color = (0, 0, 255)
                 else:
                     confidence = max(
                     0,
@@ -177,10 +179,11 @@ while True:
                         100,
                         100 - ((min_distance - 0.3) * 100)
                     )
-                )
-
-                # Label text
-                label = f"{identity} ({confidence:.0f}%)"
+                    )
+                    # Label text
+                    label = f"{identity} ({confidence:.0f}%)"
+                    # GREEN color for known
+                    color = (0, 255, 0)
 
                 cv2.putText(
                     frame,
@@ -188,7 +191,7 @@ while True:
                     (x1, y1 - 10),
                     cv2.FONT_HERSHEY_SIMPLEX,
                     0.8,
-                    (0, 255, 0),
+                    color,
                     2
                 )
 

@@ -167,8 +167,20 @@ while True:
                     2
                 )
 
+                # Convert distance into confidence
+                if identity == "Unknown":
+                    label = "Unknown"
+                else:
+                    confidence = max(
+                    0,
+                    min(
+                        100,
+                        100 - ((min_distance - 0.3) * 100)
+                    )
+                )
+
                 # Label text
-                label = f"{identity} ({min_distance:.2f})"
+                label = f"{identity} ({confidence:.0f}%)"
 
                 cv2.putText(
                     frame,
